@@ -1,0 +1,40 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+/* Rad 0 (Øverste rad - 14 taster) */
+&kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T  &kp LBKT        &kp RBKT  &kp Y  &kp U  &kp I     &kp O    &kp P     &kp BSPC
+/* Rad 1 (Midterste rad - 14 taster) */
+&kp LCTRL  &kp A  &kp S  &kp D     &kp F  &kp G  &kp LBRC        &kp RBRC  &kp H  &kp J  &kp K     &kp L    &kp SEMI  &kp SQT
+/* Rad 2 (Nederste rad - 14 taster: 6 vanlige taster + 1 knapp for encoder på hver side) */
+&kp LSHFT  &kp Z  &kp X  &kp C     &kp V  &kp B  &kp C_MUTE      &kp C_PP  &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH  &kp ESC
+/* Rad 3 (Tommelrad - 6 taster: 3 på venstre, 3 på høyre) */
+                         &kp LGUI  &mo 1  &kp SPACE                &kp RET   &mo 2  &kp RALT
+            >;
+        };
+
+        lower_layer {
+            bindings = <
+&trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &trans      &trans  &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans    &trans    &trans    &trans    &trans    &trans
+                        &trans  &trans  &trans              &trans  &trans    &trans
+            >;
+        };
+
+        raise_layer {
+            bindings = <
+&trans  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT  &trans      &trans  &kp CARET &kp AMPS  &kp ASTRK &kp LPAR  &kp RPAR  &trans
+&trans  &trans    &trans  &trans    &trans    &trans     &trans      &trans  &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT  &kp BSLH  &kp GRAVE
+&trans  &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &trans &trans   &trans  &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC  &kp PIPE  &kp TILDE
+                          &trans    &trans    &trans                 &trans  &trans    &trans
+            >;
+        };
+    };
+};
