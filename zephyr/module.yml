@@ -1,4 +1,0 @@
-name: zmk-keyboard-my_corne
-build:
-  settings:
-    board_root: .
