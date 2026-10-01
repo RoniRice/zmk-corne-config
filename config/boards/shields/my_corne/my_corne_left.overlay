@@ -4,27 +4,26 @@
 &kscan0 {
     row-gpios
         = <&pro_micro 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-        <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-        <&pro_micro 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-        <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+          <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+          <&pro_micro 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+          <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
 
     col-gpios
         = <&pro_micro 16 GPIO_ACTIVE_HIGH>,
-        <&pro_micro 14 GPIO_ACTIVE_HIGH>,
-        <&pro_micro 15 GPIO_ACTIVE_HIGH>,
-        <&pro_micro 18 GPIO_ACTIVE_HIGH>,
-        <&pro_micro 19 GPIO_ACTIVE_HIGH>,
-        <&pro_micro 20 GPIO_ACTIVE_HIGH>,
-        <&pro_micro 2 GPIO_ACTIVE_HIGH>;
+          <&pro_micro 14 GPIO_ACTIVE_HIGH>,
+          <&pro_micro 15 GPIO_ACTIVE_HIGH>,
+          <&pro_micro 18 GPIO_ACTIVE_HIGH>,
+          <&pro_micro 19 GPIO_ACTIVE_HIGH>,
+          <&pro_micro 20 GPIO_ACTIVE_HIGH>,
+          <&pro_micro 2 GPIO_ACTIVE_HIGH>;
 };
-
 
 / {
     left_encoder: encoder_left {
         compatible = "alps,ec11";
-        /* Bytt ut 0 og 1 med de faktiske pinnene encoderens A- og B-kanal er loddet til */
-        a-gpios = <&pro_micro 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        /* Bruker ledige pinner 0 og 1 slik at de ikke kolliderer med rad 7 og kolonne 20 */
+        a-gpios = <&pro_micro 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        b-gpios = <&pro_micro 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         steps = <80>;
     };
 
