@@ -7,8 +7,8 @@
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            quick-tap-ms = <125>;
+            tapping-term-ms = <125>;
+            quick-tap-ms = <100>;
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
         };
@@ -20,32 +20,32 @@
         default_layer {
             bindings = <
 /* Rad 0 (Øverste rad - 14 taster) */
-&kp TAB    &kp Q  &kp W  &kp E         &kp R  &kp T  &kp LBKT        &kp RBKT  &kp Y  &kp U  &kp I         &kp O    &kp P     &kp Q
-/* Rad 1 (Midterste rad - Raskere respons på D og K) */
-&kp LCTRL  &kp A  &kp S  &hm LSHFT D   &kp F  &kp G  &kp LBRC        &kp RBRC  &kp H  &kp J  &hm RSHFT K   &kp L    &kp SEMI  &kp SQT
+&kp TAB    &kp Q        &kp W        &kp E         &kp R        &kp T  &kp LBKT        &kp RBKT  &kp Y  &kp U        &kp I         &kp O        &kp P           &kp BSPC
+/* Rad 1 (Home Row Mods: A/S/D/F speilet til J/K/L/SEMI) */
+&kp LCTRL  &hm LCTRL A  &hm LALT S   &hm LSHFT D   &hm LGUI F   &kp G  &kp LBRC        &kp RBRC  &kp H  &hm RGUI J   &hm RSHFT K   &hm RALT L   &hm RCTRL SEMI  &kp SQT
 /* Rad 2 (Nederste rad - 14 taster: MUTE-klikk til venstre, PLAY/PAUSE-klikk til høyre) */
-&kp LSHFT  &kp Z  &kp X  &kp C         &kp V  &kp B  &kp C_MUTE      &kp C_PP  &kp N  &kp M  &kp COMMA     &kp DOT  &kp FSLH  &kp ESC
-/* Rad 3 (Tommelrad - 6 taster: Hold Backspace for lag 2) */
-                         &kp LGUI      &lt 1 ESC  &kp SPACE              &kp RET   &kp BSPC  &lt 2 RALT
+&kp LSHFT  &kp Z        &kp X        &kp C         &kp V        &kp B  &kp C_MUTE      &kp C_PP  &kp N  &kp M        &kp COMMA     &kp DOT      &kp FSLH        &kp ESC
+/* Rad 3 (Tommelrad) */
+                                     &mo 1         &lt 1 ESC    &kp SPACE              &kp RET   &kp BSPC  &mo 2
             >;
 
-            /* Venstre encoder: Venstre/Høyre pil | Høyre encoder: Opp/Ned pil */
-            sensor-bindings = <&inc_dec_kp RIGHT LEFT &inc_dec_kp UP DOWN>;
+            /* Høyre encoder treffer indeks 0 -> Opp/Ned pil først */
+            sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp RIGHT LEFT>;
         };
 
         lower_layer {
             bindings = <
-/* Rad 0 (Tallrad) */
-&trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &trans      &trans  &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &trans
-/* Rad 1 (Piltaster) */
-&trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &trans    &trans
+/* Rad 0 (Symboler på QWERT og YUIOP,  på posisjonen til ) */
+&trans  &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT &kp RBKT    &trans  &kp CARET &kp AMPS  &kp ASTRK &kp LPAR  &kp RPAR  &trans
+/* Rad 1 (Tall på ASDFG og HJKLØ) */
+&trans  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5    &trans      &trans  &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &trans
 /* Rad 2 */
-&trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans    &trans    &trans    &trans    &trans    &trans
+&trans  &trans    &trans    &trans    &trans    &trans    &trans      &trans  &trans    &trans    &trans    &trans    &trans    &trans
 /* Rad 3 */
-                        &trans  &trans  &trans              &trans  &trans    &trans
+                            &trans    &trans    &trans                &trans  &trans    &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp RIGHT LEFT &inc_dec_kp UP DOWN>;
+            sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp RIGHT LEFT>;
         };
 
         raise_layer {
@@ -60,7 +60,7 @@
                                  &trans       &trans       &trans                 &trans  &trans    &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp RIGHT LEFT &inc_dec_kp UP DOWN>;
+            sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp RIGHT LEFT>;
         };
     };
 };
