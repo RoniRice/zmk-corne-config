@@ -29,6 +29,15 @@
             flavor = "tap-preferred";
             hold-trigger-key-positions = <0 1 2 3 4 5 6 14 15 16 17 18 19 20 28 29 30 31 32 33 34 42 43 44>;
         };
+
+        lt_gt: lt_gt {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LT_GT";
+            bindings = <&kp LESS_THAN>, <&kp GREATER_THAN>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RSFT|MOD_LSFT)>;
+        };
     };
 
     macros {
@@ -45,10 +54,10 @@
 
         default_layer {
             bindings = <
-&kp ESC        &kp Q             &kp W            &kp E             &kp R            &kp T      &CUT_WORD    &kp RBKT   &kp Y    &kp U             &kp I              &kp O             &kp P                 &kp LEFT_BRACKET
-&kp TAB        &hm_left LCTRL A  &hm_left LALT S  &hm_left LSHFT D  &hm_left LGUI F  &kp G      &kp LBRC     &kp RBRC   &kp H    &hm_right RGUI J  &hm_right RSHFT K  &hm_right RALT L  &hm_right RCTRL SEMI  &kp SQT
-&kp LESS_THAN  &kp Z             &kp X            &kp C             &kp V            &kp B      &mkp LCLK    &mkp RCLK  &kp N    &kp M             &kp COMMA          &kp DOT           &kp FSLH              &kp MINUS
-                                                  &mo 2             &mo 1            &kp SPACE                          &kp RET  &kp BSPC          &kp EQUAL
+&kp ESC  &kp Q             &kp W            &kp E             &kp R            &kp T      &CUT_WORD    &kp RBKT   &kp Y    &kp U             &kp I              &kp O             &kp P                 &kp LEFT_BRACKET
+&kp TAB  &hm_left LCTRL A  &hm_left LALT S  &hm_left LSHFT D  &hm_left LGUI F  &kp G      &kp LBRC     &kp RBRC   &kp H    &hm_right RGUI J  &hm_right RSHFT K  &hm_right RALT L  &hm_right RCTRL SEMI  &kp SQT
+&lt_gt   &kp Z             &kp X            &kp C             &kp V            &kp B      &mkp LCLK    &mkp RCLK  &kp N    &kp M             &kp COMMA          &kp DOT           &kp FSLH              &kp MINUS
+                                            &mo 2             &mo 1            &kp SPACE                          &kp RET  &kp BSPC          &kp EQUAL
             >;
 
             sensor-bindings = <&inc_dec_kp RIGHT LEFT &inc_dec_kp UP DOWN>;
@@ -56,10 +65,10 @@
 
         lower_layer {
             bindings = <
-&trans  &kp EXCL  &kp AT  &kp HASH  &kp DLLR      &kp PRCNT  &kp RBKT    &trans  &kp CARET  &kp AMPS       &kp ASTRK  &kp LPAR  &kp RPAR  &kp RIGHT_BRACKET
-&trans  &kp N1    &kp N2  &kp N3    &kp N4        &kp N5     &trans      &trans  &kp N6     &kp N7         &kp N8     &kp N9    &kp N0    &trans
-&trans  &trans    &trans  &trans    &kp LEFT_GUI  &trans     &trans      &trans  &trans     &kp RIGHT_GUI  &trans     &trans    &trans    &trans
-                          &trans    &trans        &trans                         &kp BSLH   &kp PIPE       &trans
+&trans  &kp EXCL  &kp AT     &kp HASH  &kp DLLR      &kp PRCNT  &kp RBKT    &trans  &kp CARET  &kp AMPS       &kp ASTRK   &kp LPAR  &kp RPAR  &kp RIGHT_BRACKET
+&trans  &kp N1    &kp N2     &kp N3    &kp N4        &kp N5     &trans      &trans  &kp N6     &kp N7         &kp N8      &kp N9    &kp N0    &trans
+&trans  &kp LEFT  &kp RIGHT  &trans    &kp LEFT_GUI  &trans     &trans      &trans  &trans     &kp RIGHT_GUI  &trans      &trans    &trans    &trans
+                             &trans    &trans        &trans                         &kp BSLH   &kp PIPE       &caps_word
             >;
 
             sensor-bindings = <&inc_dec_kp RIGHT LEFT &inc_dec_kp UP DOWN>;
