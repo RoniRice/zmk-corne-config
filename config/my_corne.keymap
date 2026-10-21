@@ -97,7 +97,7 @@
                                      &trans    &kp LEFT_SHIFT  &kp LEFT_COMMAND                      &kp BSLH           &kp PIPE  &kp UNDER
             >;
 
-            sensor-bindings = <&inc_dec_kp RIGHT LEFT &inc_dec_kp DOWN UP>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp DOWN UP>;
         };
 
         raise_layer {
