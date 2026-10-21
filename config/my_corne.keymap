@@ -79,10 +79,10 @@
 
         default_layer {
             bindings = <
-&kp ESC  &kp Q             &kp W            &kp E           &kp R             &kp T      &CUT_WORD      &mo 2       &kp Y    &kp U       &kp I      &kp O             &kp P                 &kp LEFT_BRACKET
-&kp TAB  &hm_left LCTRL A  &hm_left LALT S  &kp D           &hm_mo 1 F        &kp G      &kp C_RESET    &sys_reset  &kp H    &hm_mo 1 J  &kp K      &hm_right RALT L  &hm_right RCTRL SEMI  &kp SQT
-&lt_gt   &kp Z             &kp X            &kp C           &kp V             &kp B      &mkp LCLK      &mkp RCLK   &kp N    &kp M       &kp COMMA  &kp DOT           &kp FSLH              &kp MINUS
-                                            &kp LEFT_SHIFT  &kp LEFT_COMMAND  &kp SPACE                             &kp RET  &kp BSPC    &kp EQUAL
+&kp ESC  &kp Q             &kp W            &kp E           &kp R             &kp T      &CUT_WORD     &mo 2       &kp Y    &kp U       &kp I      &kp O             &kp P                 &kp LEFT_BRACKET
+&kp TAB  &hm_left LCTRL A  &hm_left LALT S  &kp D           &hm_mo 1 F        &kp G      &sys_reset    &sys_reset  &kp H    &hm_mo 1 J  &kp K      &hm_right RALT L  &hm_right RCTRL SEMI  &kp SQT
+&lt_gt   &kp Z             &kp X            &kp C           &kp V             &kp B      &mkp LCLK     &mkp RCLK   &kp N    &kp M       &kp COMMA  &kp DOT           &kp FSLH              &kp MINUS
+                                            &kp LEFT_SHIFT  &kp LEFT_COMMAND  &kp SPACE                            &kp RET  &kp BSPC    &kp EQUAL
             >;
 
             sensor-bindings = <&inc_dec_kp RIGHT LEFT &inc_dec_kp DOWN UP>;
@@ -90,10 +90,10 @@
 
         lower_layer {
             bindings = <
-&trans          &kp EXCL  &kp AT     &kp HASH  &kp DLLR        &kp PRCNT         &kp RBKT    &trans  &kp CARET          &kp AMPS  &kp ASTRK      &kp LPAR          &kp RPAR   &kp RIGHT_BRACKET
-&kp CLCK        &kp N1    &kp N2     &kp N3    &kp N4          &kp N5            &trans      &trans  &kp N6             &kp N7    &kp N8         &kp N9            &kp N0     &kp DOUBLE_QUOTES
-&kp LEFT_SHIFT  &kp LEFT  &kp RIGHT  &kp UP    &kp DOWN        &kp LEFT_COMMAND  &trans      &trans  &kp RIGHT_COMMAND  &kp LALT  &kp LESS_THAN  &kp GREATER_THAN  &kp TILDE  &kp UNDER
-                                     &trans    &kp LEFT_SHIFT  &kp LEFT_COMMAND                      &kp BSLH           &kp PIPE  &kp UNDER
+&trans          &kp EXCL  &kp AT     &kp HASH        &kp DLLR          &kp PRCNT         &kp RBKT    &trans  &kp CARET          &kp AMPS  &kp ASTRK      &kp LPAR          &kp RPAR   &kp RIGHT_BRACKET
+&kp CLCK        &kp N1    &kp N2     &kp N3          &kp N4            &kp N5            &trans      &trans  &kp N6             &kp N7    &kp N8         &kp N9            &kp N0     &kp DOUBLE_QUOTES
+&kp LEFT_SHIFT  &kp LEFT  &kp RIGHT  &kp UP          &kp DOWN          &kp LEFT_COMMAND  &trans      &trans  &kp RIGHT_COMMAND  &kp LALT  &kp LESS_THAN  &kp GREATER_THAN  &kp TILDE  &kp UNDER
+                                     &kp LEFT_SHIFT  &kp LEFT_COMMAND  &kp SPACE                             &kp BSLH           &kp PIPE  &kp UNDER
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp DOWN UP>;
